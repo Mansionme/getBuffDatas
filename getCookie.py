@@ -18,11 +18,12 @@ import json
 from io import BytesIO
 TIME = lambda:int(time.time() * 1000)
 nowtime = TIME()
-‘’‘
+
+'''
 selenium模拟登录，主要是图片验证这块，原理在于先下载模板和缺口，
 再进行数值计算，算出缺口离边缘的距离，再使用ActionChains模拟拖动
 
-’‘’
+'''
 
 def move_to_gap(browser, tracks):
     slider = WebDriverWait(browser, 20).until(EC.element_to_be_clickable((By.CLASS_NAME, 'yidun_slider')))
