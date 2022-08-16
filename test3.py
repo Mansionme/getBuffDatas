@@ -5,7 +5,7 @@ import os
 def startMultiprocess():
     a = []
     # path = os.path.split(os.path.realpath(__file__))[0]+r"data.txt"
-    with open(os.path.split(os.path.realpath(__file__))[0]+r"/data.txt",'r')as f:
+    with open(os.path.split(os.path.realpath(__file__))[0]+r"/data.txt",'r',encoding='utf-8')as f:
         a.append(f.read())
     cookie =  getcookie()
     threads = []
