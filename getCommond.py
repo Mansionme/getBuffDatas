@@ -2,7 +2,7 @@ import getCookie
 import io
 import urllib.request
 import random
-from getCookie import getCookie,move_to_gap,download_img,change_size,match,get_tracks,ease_out_quart,calculImg,getCookieStr
+from getCookie import getCookie,getCookieStr
 import requests
 import time
 import json
@@ -29,28 +29,8 @@ def getcookie(phonenumber=None,pwd=None):
         return cookie
     else:
         getCookieStr(phonenumber, pwd)
-    # dstr = ''
-    # for a in open('timeStamp.txt','r'):
-    #     dstr = a
 
-    # d1 = float(dstr)
-    # d2 = time.time()
-    # d1 = time.localtime(d1)
-    # d2 = time.localtime(d2)
-    # d1 = time.strftime("%Y-%m-%d %H:%M:%S",d1)
-    # d2 = time.strftime("%Y-%m-%d %H:%M:%S",d2)
-    # time1 = datetime.strptime(d1,"%Y-%m-%d %H:%M:%S" )
-    # time2 = datetime.strptime(d2,"%Y-%m-%d %H:%M:%S" )
-    # if((time2-time1).days>5):
-    #     cookie = getCookie.getCookieStr()
-    # else:
-    #     s = ''
-    #     with open('cookies_string.txt', 'r') as f:
-    #         s = f.read()
-    #     cookie = s
-
-
-buffer = io.StringIO()
+buffer = io.StringIO()  #通过写入缓冲区使得GUI页面显示数据
 buffer.flush()
 class Calculator:
     
@@ -323,17 +303,3 @@ class Calculator:
 
 def getbuffer():
     return buffer           
-# cookies = '_ntes_nnid=ab96b98f0cb8b23e3ac312ec2332e280,1645308816209; _ntes_nuid=ab96b98f0cb8b23e3ac312ec2332e280; UM_distinctid=17f140c30d4953-0c8c18321c1148-133a6253-13c680-17f140c30d51092; Device-Id=z39JpKuosVpzIZWMjC6F; hb_MA-93D5-9AD06EA4329A_source=www.baidu.com; __root_domain_v=.163.com; _qddaz=QD.161159942463472; hb_MA-B9D6-269DF3E58055_source=buff.163.com; mp_MA-B9D6-269DF3E58055_hubble=%7B%22sessionReferrer%22%3A%20%22https%3A%2F%2Fbuff.163.com%2F%22%2C%22updatedTime%22%3A%201660449230913%2C%22sessionStartTime%22%3A%201660448752210%2C%22sendNumClass%22%3A%20%7B%22allNum%22%3A%202%2C%22errSendNum%22%3A%200%7D%2C%22deviceUdid%22%3A%20%2256bded259ef7abbc723aff7d0386325835b3d598%22%2C%22persistedTime%22%3A%201660448752207%2C%22LASTEVENT%22%3A%20%7B%22eventId%22%3A%20%22da_screen%22%2C%22time%22%3A%201660449230913%7D%2C%22currentReferrer%22%3A%20%22https%3A%2F%2Fepay.163.com%2Fh5Cashier%2Fwx-authorize%3FwxTicket%3De09269d7-f7ef-42cc-acc5-e1a963503752%22%2C%22sessionUuid%22%3A%20%2291c60c9f83e2ceae93d6ca232ba39ca241bd2d94%22%7D; Locale-Supported=zh-Hans; game=csgo; unbind_steam_result=; steam_info_to_bind=; NTES_YD_SESS=UqijV8PDmyRwmv_f1IGHojAZNSNTCh4W0Ymn_ySB77.915ST1ltocJS010AG_SW7pEGUljf5ILP_UBoS6FGb6.e3DHjEZp9T3XpM3cnIa5y62wVs_ey.TZKnzsA8XVbhUj0xMJ.6mDkDJw_yOyfCuwrAEupEZjJ9Fx3QIkhc6ccHbXpwK3x9JI6ux3nnt92n6EX6AyfQJq6Pgf8.wIH9YNTbyLmbvdR38NgAMupTETDwr; S_INFO=1660556848|0|0&60##|15674223736; P_INFO=15674223736|1660556848|1|netease_buff|00&99|CN&1660545115&netease_buff#hun&430700#10#0#0|&0|null|15674223736; remember_me=U1099656390|kFNCEvlgIAqZaHdCA6F2c7flcBDsUBWz; session=1-dIY24rksGavZoYMzLR7tg6ufV9oFOZHwguQzVSR8XaRN2034627486; csrf_token=IjU4YmU0OWU5MGE3MDAwNjA4MTU5MDg3OWUxNzkyYzllNmFjNWQ4N2Qi.Fdupvw.v4liR1Po-ej5ozCJauKzVfh9Knw'
-# cal = Calculator(cookie=getcookie(), catename="浮生如梦",rifle_name= "AWP | 浮生如梦 (略有磨损)",phonenumber="15674223736",pwd="China2326abc",minprice=10,maxprice=42,minmosun=0.1,maxmosun=0.12)  #10, 11, 0.1, 0.11
-# cal2 = Calculator(cookie=getcookie(), catename="二西莫夫",rifle_name= "AK-47 | 二西莫夫 (略有磨损)",phonenumber="15674223736",pwd="China2326abc",minprice=10,maxprice=30,minmosun=0.1,maxmosun=0.12) #10, 11, 0.1, 0.11
-
-# import threading
-
-# threads = []
-# t1 = threading.Thread(target=cal.buy_until_complete)
-# threads.append(t1)
-# t2 = threading.Thread(target=cal2.buy_until_complete)
-# threads.append(t2)
-
-# for t in threads:
-#     t.start()
