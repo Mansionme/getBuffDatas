@@ -16,7 +16,7 @@ nowtime = TIME()
 def getcookie(phonenumber=None,pwd=None):
     if  phonenumber == None or pwd==None:
         s = ''
-        with open(os.path.split(os.path.realpath(__file__))[0]+r"/cookies_string.txt", 'r') as f:
+        with open(os.path.split(os.path.realpath(__file__))[0]+r"/cookies_string.txt", 'r',encoding='utf-8') as f:
             s = f.read()
         cookie = s
         return cookie
@@ -219,7 +219,7 @@ class Calculator:
         return a
     
     def writeGoods(self,L):
-        with open(self.rifle_name+'_'+'.txt' ,'w') as f:
+        with open(self.rifle_name+'_'+'.txt' ,'w',encoding='utf-8') as f:
             for x in L:
                 f.write(x[0])
                 f.write(',')
@@ -232,7 +232,7 @@ class Calculator:
     
     def readGoods(self):
         a = []
-        for line in open(self.rifle_name+'_'+'.txt'):
+        for line in open(self.rifle_name+'_'+'.txt',encoding='utf-8'):
             a.append(line.split(','))
         c = []   
         for x in range(len(a)):
