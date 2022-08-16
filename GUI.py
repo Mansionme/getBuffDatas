@@ -79,7 +79,7 @@ class GUI:
             str1 = catename+','+riflie_name+','+minprice+','+maxprice+','+minmosun+','+maxmosun+'\n'
             try:
                 
-                with open(os.path.split(os.path.realpath(__file__))[0]+r"/data.txt",'a+') as f:
+                with open(os.path.split(os.path.realpath(__file__))[0]+r"/data.txt",'a+',encoding='utf-8') as f:
                     content = f.read()
                     f.seek(0,2)
                     f.write(str1)
@@ -97,7 +97,7 @@ class GUI:
             self.w1.insert("insert","请输入cookie值！\n")
         else:
             self.w1.delete(1.0,"end")
-            with open(os.path.split(os.path.realpath(__file__))[0]+r"/cookies_string.txt",'w') as f:
+            with open(os.path.split(os.path.realpath(__file__))[0]+r"/cookies_string.txt",'w',encoding='utf-8') as f:
                 f.write(cookie)
                 self.w1.insert("insert","插入cookie成功！\n")
             
