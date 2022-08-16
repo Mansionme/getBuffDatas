@@ -115,7 +115,7 @@ def getCookie(phonenumber,pwd):
     chrome_options.add_argument("--disable-blink-features=AutomationControlled")
 
     browser = webdriver.Chrome(ChromeDriverManager().install(),options=chrome_options)
-    with open(os.path.split(os.path.realpath(__file__))[0]+r"/stealth.min.js") as f:
+    with open(os.path.split(os.path.realpath(__file__))[0]+r"/stealth.min.js",encoding='utf-8') as f:
         js = f.read()
     #execute_cdp_cmd用来执行chrome开发这个工具命令
     browser.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
@@ -155,11 +155,11 @@ def getCookie(phonenumber,pwd):
         time.sleep(1)
         browser.get('https://buff.163.com/?game=csgo')
         cookie_list = browser.get_cookies()
-        with open(os.path.split(os.path.realpath(__file__))[0]+r"/cookies.txt",'w')as f:
+        with open(os.path.split(os.path.realpath(__file__))[0]+r"/cookies.txt",'w',encoding='utf-8')as f:
             f.write(json.dumps(cookie_list))
         cookie = [item['name']+'='+item['value'] for item in cookie_list]
         cookie_str = ';'.join(item for item in cookie)
-        with open(os.path.split(os.path.realpath(__file__))[0]+r"/cookies_string.txt",'w') as f:
+        with open(os.path.split(os.path.realpath(__file__))[0]+r"/cookies_string.txt",'w',encoding='utf-8') as f:
             f.write(cookie_str)
         print("登录成功！")
 
